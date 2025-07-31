@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+ <link rel="stylesheet" href="style.css">
+
+  <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#target1">作品一覧</a></li>
+      <li><a href="#">最新情報</a></li>
+      <li><a href="#">SNS</a></li>
+      <li><a href="#">お問い合わせ</a></li>
+    </ul>
+
+    
+
+  </nav>
+
+   <!-- A-FrameをCDNから読み込む -->
+   <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+   <!-- aframe-orbit-controlsをCDNから読み込む -->
+   <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+ 
+</head>
+
+<body>
+
+
+<!-- スライドの外枠 -->
+<div class="slide-wrapper">
+  <!-- スライド（コンテンツ） -->
+  <div id="slide" class="slide">
+    <div class="picture1">
+      <img id="picture1" src="風景.PNG"  >
+      <!-- <p>スライド１</p> -->
+    </div>
+    <div class="picture2">
+      <img id="picture2" src="油彩1.PNG"  >
+      <!-- <p>スライド２</p> -->
+    </div>
+    <div class="picture3">
+      <img id="picture3" src="油彩2.PNG" >
+      <!-- <p>スライド３</p> -->
+    </div>
+  </div>
+  <!-- 左右のボタン -->
+  <span id="prev" class="prev"></span>
+  <span id="next" class="next"></span>
+  <!-- インジケーター -->
+  <ul class="indicator" id="indicator">
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+  </ul>
+</div>
+
+<script src="javascript.js"></script>
+
+
+
+
+<!--</div>
+  <li><img class="animation" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiThh51O_5PBczGCVOAZqWk0NniNOu2Fxun8BlELAmHwR8Rltl1Gnqb_u0dkHvf34yGijTLvwnjWDAe6f-LtgOXAiX3sj__yCp5rsa2KTeaR0uaGye3zKUaTCUd8PiHDAObRfDSW8JT9qc/s800/hirameki_man.png" alt=""></li>
+</ul> -->
+
+<p class="A">Illustration</p>
+<div class="target1"  id="target1">
+  
+ <img class="animation"  src="きつね.PNG">
+
+ <div class="box17">
+  <p>デジタルイラスト（clipstudio）</p>
+</div>
+ 
+</div>
+
+
+<div class="target2"  id="target2">
+  <p class="B">oilpaint</p>
+  <img class="animation" src="油彩1.PNG">
+</div>
+
+
+<div class="target3"  id="target3">
+  <p class="C">blender</p>
+  <img class="animation" src="ブレンダー.jpg">
+</div>
+
+<div class="model">
+  <a-scene embedded>
+    <!-- aframe-orbit-controlsのプロパティを記述 -->
+    <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; maxPolarAngle:180; minDistance: 0.5; maxDistance: 200; initialPosition: 0 0 30"></a-entity>
+    
+    <!-- 3Dモデルを読み込んで、位置やスケールなど定義する -->
+    <a-gltf-model  id="test" src="key2.gltf"  position="0 0 0" rotation="20 124 7" scale="3 3 3"></a-gltf-model>
+    
+    <!-- 背景色-->
+    <a-sky color="white"></a-sky>
+
+  </a-scene>
+</div>
+
+</body>
+
+
+
+
+
+</html>
